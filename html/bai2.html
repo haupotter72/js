@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculate Weekday</title>
+</head>
+<body>
+  <label for="numDays">Nhập số ngày đi làm tiếp theo:</label>
+  <input type="number" id="numDays" min="1">
+  <button onclick="calculateWeekday()">Tính ngày trong tuần</button>
+  <div id="result"></div>
+
+  <script>
+    function calculateWeekday() {
+      const numDays = parseInt(document.getElementById('numDays').value);
+      const weekdays = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+      let today = new Date();
+      let dayOfWeek = today.getDay(); // Lấy thứ trong tuần hiện tại (0-6)
+      let daysToAdd = numDays;
+
+      // Tính toán số ngày cần thêm, không tính T7 và CN
+      for (let i = 0; i < numDays; i++) {
+        if (dayOfWeek === 5) { // Nếu là Thứ Sáu
+          daysToAdd += 2; // Bỏ qua Thứ Bảy và Chủ Nhật
+          dayOfWeek = 0; // Đặt lại về Chủ Nhật
+        } else if (dayOfWeek === 6) { // Nếu là Thứ Bảy
+          daysToAdd += 1; // Bỏ qua Chủ Nhật
+          dayOfWeek = 0; // Đặt lại về Chủ Nhật
+        } else {
+          dayOfWeek = (dayOfWeek + 1) % 7;
+        }
+      }
+
+      today.setDate(today.getDate() + daysToAdd); // Thêm số ngày vào ngày hiện tại
+      const resultDayOfWeek = today.getDay(); // Lấy thứ trong tuần của kết quả
+      document.getElementById('result').innerText = `Ngày di lam đó là ${weekdays[resultDayOfWeek]}`;
+    }
+  </script>
+</body>
+</html>
