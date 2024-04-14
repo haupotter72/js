@@ -1,0 +1,75 @@
+array.prototype.every():
+Mục đích: Kiểm tra xem tất cả các phần tử trong một mảng có thỏa mãn một điều kiện nào đó hay không.
+Ưu điểm:
+Tích hợp sẵn: every() là một phương thức có sẵn trong JavaScript, giúp kiểm tra điều kiện một cách dễ dàng.
+Ngắn gọn và đọc mã lệnh: Sử dụng every() giúp viết mã lệnh ngắn gọn hơn so với việc sử dụng vòng lặp for hoặc forEach.
+Tối ưu hóa hiệu suất: every() dừng kiểm tra ngay khi gặp phần tử không thỏa mãn điều kiện, giúp tối ưu hóa hiệu suất.
+Trường hợp sử dụng:
+Kiểm tra xem tất cả các phần tử trong mảng có đáp ứng một điều kiện nào đó hay không (ví dụ: tất cả số nguyên dương).
+Kiểm tra tính hợp lệ của dữ liệu (ví dụ: tất cả các email trong danh sách phải hợp lệ).
+Phương thức map(): Đây là cách tạo một mảng mới bằng cách áp dụng một hàm cho từng phần tử trong mảng gốc. Đây là một phương thức mạnh mẽ, nhưng có thể chậm hơn với các mảng lớn 1.
+Phương thức forEach(): Đây là cách duyệt qua từng phần tử trong mảng và thực hiện một hành động. Nó tương tự như map(), nhưng không tạo ra một mảng mới. Hiệu suất của nó tương đối tốt 1.
+Vòng lặp for: Đây là cách truyền thống để duyệt qua mảng. Nó thường hiệu quả hơn map() và forEach() cho các mảng lớn 1.
+Tóm lại, nếu bạn đang làm việc với mảng lớn, hãy xem xét sử dụng vòng lặp for để tối ưu hiệu suất. Tuy nhiên, nếu bạn cần tạo một mảng mới hoặc thay đổi giá trị của từng phần tử, map() hoặc forEach() có thể phù hợp hơn.
+array.every():
+Ưu điểm:
+Tích hợp sẵn: every() là một phương thức có sẵn trong Js, giúp kiểm tra điều kiện một cách dễ dàng.
+Ngắn gọn và đọc mã lệnh: Sử dụng every() giúp viết mã lệnh ngắn gọn hơn so với việc sử dụng vòng lặp for hoặc forEach.
+Tối ưu hóa hiệu suất: every() dừng kiểm tra ngay khi gặp phần tử không thỏa mãn điều kiện, giúp tối ưu hóa hiệu suất.
+Trường hợp sử dụng:
+Kiểm tra xem tất cả các phần tử trong mảng có đáp ứng một điều kiện nào đó hay không (ví dụ: tất cả số nguyên dương).
+Kiểm tra tính hợp lệ của dữ liệu (ví dụ: tất cả các email trong danh sách phải hợp lệ).
+array.filter():
+Ưu điểm:
+Tạo mảng mới: filter() tạo ra một mảng mới chứa các phần tử thỏa mãn điều kiện.
+Không thay đổi mảng gốc: Mảng gốc không bị thay đổi.
+Trường hợp sử dụng:
+Lọc các phần tử theo điều kiện (ví dụ: lọc số chẵn).
+Tạo mảng mới từ mảng gốc dựa trên điều kiện.
+array.find():
+Ưu điểm:
+Tìm phần tử đầu tiên thỏa mãn: find() trả về phần tử đầu tiên thỏa mãn điều kiện.
+Ngắn gọn và hiệu quả: Dễ đọc và sử dụng.
+Trường hợp sử dụng:
+Tìm phần tử đầu tiên thỏa mãn điều kiện (ví dụ: tìm người dùng có ID cụ thể).
+for...of:
+Ưu điểm:
+Duyệt qua các phần tử: Dễ đọc và hiệu quả cho việc duyệt qua tất cả các phần tử trong mảng.
+Trường hợp sử dụng:
+Duyệt qua tất cả các phần tử trong mảng mà không cần chỉ số.
+for...in:
+Ưu điểm:
+Duyệt qua tất cả các thuộc tính: Duyệt qua tất cả các thuộc tính của đối tượng (bao gồm cả dạng số và không phải dạng số).
+Trường hợp sử dụng:
+Duyệt qua tất cả các thuộc tính của đối tượng (không phải mảng).
+
+Để thêm / xóa các thành phần:
+push(...items) – thêm các mục vào cuối,
+pop() – trích xuất một mục từ cuối,
+shift() – trích xuất một mục từ đầu,
+unshift(...items) – thêm các mục vào đầu.
+splice(pos, deleteCount, ...items)– tại chỉ mục tại vị trí posxóa deleteCountcác phần tử và chèn items.
+slice(start, end)– tạo ra một mảng mới, sao chép các phần tử từ vị trí startcho đến khi end(không bao gồm) vào nó.
+concat(...items)– trả về một mảng mới: sao chép tất cả các thành viên của hiện tại và thêm itemsvào đó. Nếu bất kỳ trong số đó itemslà một mảng, thì các phần tử của nó được lấy.
+Để tìm kiếm giữa các mục hay phần tử trong mảng:
+indexOf/lastIndexOf(item, pos)– tìm kiếm itembắt đầu từ vị trí pos, trả về chỉ mục hoặc -1nếu không tìm thấy.
+includes(value)– trả về truenếu mảng có value, nếu không false.
+find/filter(func)– lọc các phần tử thông qua hàm, trả về một phần tử đầu tiên / tất cả các giá trị làm cho hàm kiểm trả của nó trả về true.
+findIndexlà như find, nhưng trả về chỉ số thay vì một giá trị.
+Để lặp lại các mục hay phần tử:
+forEach(func)– gọi funccho mọi mục, không trả lại bất cứ điều gì.
+Để chuyển đổi mảng:
+map(func)– tạo ra một mảng mới từ kết quả gọi funccho mọi phần tử.
+sort(func) – sắp xếp các mảng tại chỗ, sau đó trả về nó.
+reverse() – đảo ngược mảng tại chỗ, sau đó trả về nó.
+split/join – chuyển đổi một chuỗi thành mảng và trả lại.
+reduce(func, initial)– tính toán một giá trị trên mảng bằng cách gọi funccho từng phần tử và chuyển kết quả trung gian giữa các lệnh gọi.
+Ngoài ra:
+Array.isArray(arr)kiểm tra arrlà một mảng.
+Xin lưu ý rằng phương pháp sort, reversevà splicesửa đổi chính bản thân các mảng đó.
+
+Những phương thức này là những phương thức được sử dụng nhiều nhất, chúng bao gồm 99% trường hợp sử dụng. Nhưng có một vài trường hợp khác:
+
+arr.some(fn)/arr.every(fn) kiểm tra mảng. Hàm fnđược gọi trên mỗi phần tử của mảng tương tự map. Nếu chỉ cần bất kỳ 1 kết quả / tất cả các kết quả là true, trả lại true, nếu không false.
+arr.fill(value, start, end) – điền vào mảng với việc lặp lại valuetừ index startđến end.
+arr.copyWithin(target, start, end) – sao chép các phần tử của nó từ vị trí startcho đến vị trí endvào chính nó , tại vị trí target(ghi đè hiện có).
